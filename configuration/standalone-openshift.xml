@@ -154,10 +154,17 @@
                         <password>${env.DB_PASSWORD}</password>
                     </security>
                     <validation>
-                      <check-valid-connection-sql>select 1</check-valid-connection-sql>
+                      <check-valid-connection-sql>select 1 from dual</check-valid-connection-sql>
+                      <valid-connection-checker>org.jboss.jca.adapters.jdbc.extensions.oracle.OracleValidConnectionChecker</valid-connection-checker>
+                      <exception-sorter>org.jboss.jca.adapters.jdbc.extensions.oracle.OracleExceptionSorter</exception-sorter>
+                      <validate-on-match>false</validate-on-match>
                       <background-validation>${env.DB_BACKGROUND_VALIDATION}</background-validation>
                       <background-validation-millis>${env.DB_BACKGROUND_VALIDATION_MILLIS}</background-validation-millis>
                     </validation>
+                    <timeout>
+                        <!-- specify a value appropriate for system constraints/desired behavior -->
+                        <idle-timeout-minutes>4</idle-timeout-minutes>
+                    </timeout>
                 </datasource>
                 <drivers>
                     <driver name="h2" module="com.h2database.h2">
