@@ -155,8 +155,8 @@
                     </security>
                     <validation>
                       <check-valid-connection-sql>select 1 from dual</check-valid-connection-sql>
-                      <valid-connection-checker>org.jboss.jca.adapters.jdbc.extensions.oracle.OracleValidConnectionChecker</valid-connection-checker>
-                      <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleExceptionSorter" />
+                      <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleValidConnectionChecker"></valid-connection-checker>
+                      <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleExceptionSorter"></exception-sorter>
                       <validate-on-match>false</validate-on-match>
                       <background-validation>${env.DB_BACKGROUND_VALIDATION}</background-validation>
                       <background-validation-millis>${env.DB_BACKGROUND_VALIDATION_MILLIS}</background-validation-millis>
