@@ -569,7 +569,7 @@
                     <http-invoker security-realm="ApplicationRealm"/>
                 </host>
             </server>
-            <servlet-container name="default" default-session-timeout="${env.SESSION_TIMEOUT}>
+            <servlet-container name="default" default-session-timeout="${env.SESSION_TIMEOUT}">
                 <jsp-config/>
                 <websockets/>
             </servlet-container>
